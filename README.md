@@ -109,21 +109,25 @@ Before setting up the project, make sure you have the following installed:
 
 Here's an overview of the project folder structure:
 ```bash
-/login-admin-dashboard
-  ├── /public
-  │   ├── /css
-  │   │   └── admin.css      # Styles for the admin page
-  │   └── /js
-  │       └── admin.js       # JavaScript for fetching and displaying users
-  ├── /views
-  │   ├── login.html         # Login page
-  │   ├── register.html      # Registration page
-  │   ├── main.html          # User dashboard
-  │   └── admin.html         # Admin dashboard to view users
-  ├── db.sqlite              # SQLite database (will be generated automatically)
-  ├── index.js               # Main server file (Node.js app)
-  ├── package.json           # npm dependencies and scripts
-  └── package-lock.json      # Exact dependency versions
+/login-system
+  ├── public
+  │   ├── js
+  │   │   ├── admin.js        # JavaScript for admin page functionality
+  │   │   ├── alerts.js       # JavaScript for handling alert messages
+  │   ├── styles
+  │       ├── admin.css       # Styles for the admin page
+  │       ├── login.css       # Styles for the login page
+  │       ├── main.css        # Styles for the main page
+  │       ├── register.css    # Styles for the registration page
+  ├── views
+  │   ├── admin.html          # Admin dashboard view
+  │   ├── login.html          # Login page
+  │   ├── main.html           # Main page (landing or home)
+  │   ├── register.html       # Registration page
+  ├── db.sqlite               # SQLite database file
+  ├── index.js                # Entry point for server-side logic (Node.js)
+  ├── package.json            # Dependencies and scripts for the project
+  ├── package-lock.json       # Locked versions of dependencies
 ```
 
 ---
