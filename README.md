@@ -65,10 +65,10 @@ Before setting up the project, make sure you have the following installed:
    - The app uses an SQLite database, and the users table is created automatically. If you'd like to set up the database manually, you can run the following SQL query to create the table:
    ```sql
    CREATE TABLE IF NOT EXISTS users (
-   id INTEGER PRIMARY KEY AUTOINCREMENT,
-   username TEXT NOT NULL UNIQUE,
-   password TEXT NOT NULL,
-   email TEXT NOT NULL UNIQUE
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      username TEXT NOT NULL UNIQUE,
+      password TEXT NOT NULL,
+      email TEXT NOT NULL UNIQUE
    );
    ```
 4. **Start the server**:
