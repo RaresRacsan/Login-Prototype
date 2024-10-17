@@ -31,7 +31,7 @@ db.run(`CREATE TABLE IF NOT EXISTS users (
 });
 
 // Serve static files
-app.use(express.static('views'));
+app.use(express.static('views'));  // This serves files in the 'views' foder
 app.use(express.static('public')); // This serves files in the 'public' folder
 
 
@@ -44,6 +44,30 @@ function isAuthentificated(req, res, next) {
         res.redirect('/login.html');    // if not, redirect to login page
     }
 }
+
+function isAdmin(req, res, next) {
+    if(req.session.userId && req.session.username === 'admin') {
+        next(); // proceed to the next middleware
+    }
+    else {
+        console.log('Access Denied: Not Admin');
+        res.redirect('/login.html');
+    }
+}
+
+app.get('/admin', isAuthentificated, isAdmin, (req, res) => {
+    res.sendFile(__dirname + '/views/admin.html');
+});
+
+app.get('/admin/users', isAuthentificated, isAdmin, (req, res) => {
+    db.all('SELECT username, email FROM users', [], (err, rows) => {
+        if (err) {
+            console.error('Error fetching users:', err);
+            return res.status(500).send('Server error');
+        }
+        res.json(rows); // Send the user data as JSON
+    });
+});
 
 app.get('/', (req, res) => {
     res.redirect('/login.html');
@@ -91,7 +115,14 @@ app.post('/login', async (req, res) => {
 
         // Set session and login
         req.session.userId = row.id;
-        res.redirect('/main'); // Redirect to the main page after successful login
+        req.session.username = row.username
+
+        // Redirect to the main page or admin page based on username
+        if (req.session.username === 'admin') {
+            res.redirect('/admin'); // Redirect to admin page
+        } else {
+            res.redirect('/main'); // Redirect to main page for non-admin users
+        }
     });
 });
 
@@ -109,3 +140,12 @@ app.get('/main', isAuthentificated, (req, res) => {
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
 });
+
+app.use(session({
+    secret: 'secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 24 * 60 * 60 * 1000 // session lasts for 24 hours
+    }
+}));
