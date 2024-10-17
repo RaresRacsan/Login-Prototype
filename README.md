@@ -112,7 +112,7 @@ Here's an overview of the project folder structure:
 /login-admin-dashboard
   ├── /public
   │   ├── /css
-  │   │   └── admin.css     # Styles for the admin page
+  │   │   └── admin.css      # Styles for the admin page
   │   └── /js
   │       └── admin.js       # JavaScript for fetching and displaying users
   ├── /views
