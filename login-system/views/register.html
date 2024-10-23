@@ -4,30 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link rel="stylesheet" href="/styles/register.css">
+    <link rel="stylesheet" href="/styles/register.css"> <!-- Link to the CSS file for styling the registration page -->
 </head>
 
 <body>
     <div class="register-container">
         <h1>Register</h1>
+        <!-- Registration form with POST method to /register endpoint -->
         <form action="/register" method="POST">
             <label for="username">Username:</label>
-            <input type="text" name="username" required><br>
+            <input type="text" name="username" required><br> <!-- Username field -->
 
             <label for="password">Password:</label>
-            <input type="password" name="password" required><br>
+            <input type="password" name="password" required><br> <!-- Password field -->
 
             <label for="email">Email:</label>
-            <input type="email" name="email" required><br>
+            <input type="email" name="email" required><br> <!-- Email field -->
 
-            <button type="submit">Register</button>
+            <button type="submit">Register</button> <!-- Submit button for registration form -->
         </form>
         <br>
         <p>Already have an account?</p>
+        <!-- Button to navigate to login page -->
         <button onclick="window.location.href='/login.html'">Login</button>
     </div>
 
-    <script src="/js/alerts.js"></script>
+    <script src="/js/alerts.js"></script> <!-- Include the alerts.js script for handling URL-based messages -->
 </body>
 
 </html>

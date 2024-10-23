@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
-    <link rel="stylesheet" href="/styles/admin.css"> <!-- Corrected CSS path -->
+    <link rel="stylesheet" href="/styles/admin.css"> <!-- Link to the CSS file for styling the admin page -->
 </head>
 <body>
     <h1>Admin Dashboard</h1>
@@ -12,19 +12,19 @@
     <table>
         <thead>
             <tr>
-                <th>Username</th>
-                <th>Email</th>
+                <th>Username</th> <!-- Table column for usernames -->
+                <th>Email</th>    <!-- Table column for email addresses -->
             </tr>
         </thead>
         <tbody id="user-list">
-            <!-- Table rows will be dynamically populated here -->
+            <!-- Table rows will be dynamically populated here with user data from admin.js -->
         </tbody>
     </table>
 
     <footer>
-        <a href="/logout" class="logout">Logout</a>
+        <a href="/logout" class="logout">Logout</a> <!-- Link to logout the admin user -->
     </footer>
 
-    <script src="/js/admin.js"></script> <!-- Corrected JS path -->
+    <script src="/js/admin.js"></script> <!-- Include the admin.js script for populating the user list -->
 </body>
 </html>
