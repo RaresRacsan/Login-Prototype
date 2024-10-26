@@ -74,7 +74,7 @@ Before setting up the project, make sure you have the following installed:
 4. **Start the server**:
    To start the development server and run the app locally, run the following command:
    ```bash
-   npm start
+   node index.js
    ```
    This will start the server at http://localhost:3000.
 
@@ -96,7 +96,7 @@ Before setting up the project, make sure you have the following installed:
 1. After cloning the repository, follow the Project Setup steps to install dependencies and set up the database.
 2. To start the application, simply run:
   ```bash
-  npm start
+  node index.js
   ```
 3. Open your browser and go to http://localhost:3000 to view the app.
   - You will first be redirected to the login page.
